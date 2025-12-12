@@ -24,6 +24,17 @@ html,body{
     --spcae-xl: 32px;
     --spcae-2xl: 40px;
     --spcae-3xl: 48px;
+
+    /*Bordar Colors*/
+    --border-primary-color: #333333;
+
+    /*Bordar-radius*/
+    --border-radius-xs: 4px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xlg: 20px;
+    --border-radius-2xlg: 24px;
 }
 
 html{
@@ -38,11 +49,26 @@ main,section{
 }
 
 section{
-    padding: 40px;
+    padding: var(--spcae-2xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;   
+    gap: var(--spcae-lg);
 }
 
 section .infos{
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.info{
+    padding: var(--space-sm) var(--spcae-md);
+    border: 1px solid var(--border-primary-color);
+    border-radius: var(--border-radius-sm);
+}
+
+.board{
+    border: 1px solid var(--border-primary-color);
+    flex-grow: 1;
 }

@@ -1,16 +1,24 @@
 const board = document.querySelector(".board")
 
-const blockheight = 80;
-const blockwidth = 80;
+const blockheight = 50;
+const blockwidth = 50;
 
 const cols = Math.floor(board.clientWidth / blockwidth);
 const rows = Math.floor(board.clientHeight / blockheight);
+
+const blocks = [];
+const snake = [
+    {x:1 , y:3},
+    {x:1 , y:4},
+    {x:1 , y:5}
+];
 
 for(let row = 0 ; row<rows ; row++){
     for(let col=0 ; col<cols ;col++){
         const block = document.createElement('div');
         block.classList.add("block");
         board.appendChild(block);
-        block.innerText = `${row}-${col}`
+        block.innertext = `${row}-${col}`;
+        blocks[`${row}-${col}`] = block;
     }
 }

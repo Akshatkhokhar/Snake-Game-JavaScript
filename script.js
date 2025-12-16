@@ -22,3 +22,9 @@ for(let row = 0 ; row<rows ; row++){
         blocks[`${row}-${col}`] = block;
     }
 }
+
+function render(){
+    snake.forEach(segment => {
+        blocks[`${segment.x}-${segment.y}`].classList.add("fill");
+    })
+}

@@ -1,139 +1,138 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,body{
+html, body {
     height: 100%;
     width: 100%;
 }
 
-:root{
-    /*Background Color*/
+:root {
     --bg-primary-color: #0c0c0c;
     --bg-fill-color: #fdfdfc;
     --bg-food-color: #ff0000;
-
-    /*Text Color*/
     --text-primary-color: #f0f0f0;
-
-    /*Spacing Variables*/
-    --space-xs: 4px;
-    --space-sm: 8px;
-    --spcae-md: 16px;
-    --spcae-lg: 24px;
-    --spcae-xl: 32px;
-    --spcae-2xl: 40px;
-    --spcae-3xl: 48px;
-
-    /*Bordar Colors*/
-    --border-primary-color: #333333;
-
-    /*Bordar-radius*/
-    --border-radius-xs: 4px;
-    --border-radius-sm: 8px;
-    --border-radius-md: 12px;
-    --border-radius-lg: 16px;
-    --border-radius-xlg: 20px;
-    --border-radius-2xlg: 24px;
+    --border-primary-color: #333;
 }
 
-html{
+html {
     background-color: var(--bg-primary-color);
     color: var(--text-primary-color);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, sans-serif;
 }
 
-main,section{
+main, section {
     width: 100%;
     height: 100%;
 }
 
-section{
-    padding: var(--spcae-2xl);
+section {
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    height: 100%;   
-    gap: var(--spcae-lg);
+    gap: 24px;
 }
 
-section .infos{
-    width: 100%;
+.infos {
     display: flex;
     justify-content: space-between;
 }
 
-.info{
-    padding: var(--space-sm) var(--spcae-md);
+.info {
+    padding: 8px 16px;
     border: 1px solid var(--border-primary-color);
-    border-radius: var(--border-radius-sm);
-}
-
-.board{
-    border: 1px solid var(--border-primary-color);
-    flex-grow: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(50px , 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(50px , 1fr));
-}
-
-.btn{
-    padding: 12px 28px;
-    background-color: #000;
-    color: #fff;
-    border: 1px solid #fff;
     border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: transform 0.3s ease, 
-                background-color 0.3s ease, 
-                color 0.3s ease;
 }
 
-.btn:hover{
-    transform: scale(1.05);
-    background-color: #fff;
-    color: #000;
+.board {
+    flex-grow: 1;
+    border: 1px solid var(--border-primary-color);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
 }
 
-
-.block{
-    /* width: 30px;
-    height: 30px; */
+.block {
     border: 1px solid var(--border-primary-color);
 }
 
-.fill{
+.fill {
     background-color: var(--bg-fill-color);
 }
 
-.food{
+.food {
     background-color: var(--bg-food-color);
+    border-radius: 50%;
 }
 
-.modal{
-    height: 100vh;
-    width: 100vw;
+/* ---------- SNAKE HEAD ---------- */
+
+.head {
+    position: relative;
+    background: linear-gradient(145deg, #ffffff, #cfcfcf);
+    border-radius: 35%;
+    box-shadow: inset -3px -3px 6px rgba(0,0,0,0.3);
+}
+
+.head::before,
+.head::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.head.up::before { top: 6px; left: 10px; }
+.head.up::after  { top: 6px; right: 10px; }
+
+.head.down::before { bottom: 6px; left: 10px; }
+.head.down::after  { bottom: 6px; right: 10px; }
+
+.head.left::before { left: 6px; top: 10px; }
+.head.left::after  { left: 6px; bottom: 10px; }
+
+.head.right::before { right: 6px; top: 10px; }
+.head.right::after  { right: 6px; bottom: 10px; }
+
+/* ---------- MODAL ---------- */
+
+.modal {
     position: fixed;
-    top: 0;
-    background-color: #35353587;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
     backdrop-filter: blur(4px);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-.modal .start-game,
-.modal .game-over {
+.start-game,
+.game-over {
     display: flex;
     flex-direction: column;
+    gap: 24px;
     align-items: center;
-    gap: var(--spcae-lg);
 }
 
-.modal .game-over{
+.game-over {
     display: none;
+}
+
+.btn {
+    padding: 12px 28px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
 }

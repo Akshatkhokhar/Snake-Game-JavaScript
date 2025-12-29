@@ -1,38 +1,118 @@
-Snake — Classic arcade in your browser
-A simple, fast, and fun Snake game built with plain HTML, CSS, and JavaScript. Use the arrow keys (or WASD) to move the snake, eat food to grow, and avoid hitting walls or yourself. Every play shows your current score, the highest score (persisted in the browser), and a live timer that tracks how long the run lasted.
+🐍 Snake Game (Vanilla JavaScript)
 
-Features
+A classic Snake Game built from scratch using pure HTML, CSS, and JavaScript.
+No frameworks. No libraries. Just clean logic, proper state management, and a focus on fundamentals.
 
-Responsive canvas-based gameplay (works on desktop & mobile)
+This project demonstrates game loops, grid-based movement, collision detection, timer handling, and persistent scoring.
 
-Current score displayed live
+🚀 Features
 
-Highest score saved using localStorage
+🎮 Grid-based Snake movement
 
-Session timer (minutes:seconds) showing total play time
+🐍 Distinct snake head with direction-aware design
 
-Start / Pause / Reset controls
+🍎 Random food generation
 
-Easy-to-read code — great for learning and hacking
+📈 Score system (+10 points per food)
 
-How to play
+🏆 Persistent High Score (saved using localStorage)
 
-Arrow keys or WASD to move
+⏱ Live game timer (starts/stops with game)
 
-Eat the food to increase score and snake length
+💀 Game-over detection (wall & self collision)
 
-Game ends when you collide with wall or yourself
+🔁 Restart game functionality
 
-High score updates automatically (saved in browser)
+⌨️ Keyboard controls (Arrow keys)
 
-Tech
+🛠️ Tech Stack
 
-HTML5 canvas, vanilla JS, CSS
+HTML – Structure
 
-Persisted high score via localStorage
+CSS – Layout & styling
 
-Run locally
+JavaScript (Vanilla) – Game logic & state management
 
-Clone the repo.
+No external libraries or frameworks were used.
 
-Open index.html in browser or run a local static server (recommended).
+🎮 Controls
+Key	Action
+⬆️ Arrow Up	Move Up
+⬇️ Arrow Down	Move Down
+⬅️ Arrow Left	Move Left
+➡️ Arrow Right	Move Right
+⏱ Timer Logic (How it Works)
+
+Timer starts when the game starts
+
+Updates every second
+
+Stops immediately on game over
+
+Resets on restart
+
+Displayed in mm:ss format
+
+Timer logic is separated from rendering logic to avoid bugs and timing drift.
+
+🧠 Game Logic Overview
+
+The snake moves using a fixed interval game loop
+
+The snake’s head position is calculated before every move
+
+Collisions are checked before rendering
+
+Food consumption increases score and snake length
+
+High score is stored using localStorage
+
+Game state resets cleanly on restart
+
+📂 Project Structure
+snake-game/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+
+▶️ How to Run Locally
+
+Clone the repository
+
+Open index.html in your browser
+(No server required)
+
+That’s it.
+
+📌 Why This Project Matters
+
+This project was built to:
+
+Strengthen JavaScript fundamentals
+
+Understand real-time game loops
+
+Practice clean state management
+
+Avoid dependency-based shortcuts
+
+Everything here is intentional.
+
+🔮 Possible Improvements
+
+Speed increase with score or time
+
+Pause / Resume feature
+
+Mobile swipe controls
+
+Sound effects
+
+Dark / Light theme toggle
+
+👤 Author
+
+Built by Akshat
+Focused on learning by building — not copying.

@@ -1,138 +1,164 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
 :root {
-    --bg-primary-color: #0c0c0c;
-    --bg-fill-color: #fdfdfc;
-    --bg-food-color: #ff0000;
-    --text-primary-color: #f0f0f0;
-    --border-primary-color: #333;
+  --bg-primary-color: #0c0c0c;
+  --bg-fill-color: #fdfdfc;
+  --bg-food-color: #ff0000;
+  --text-primary-color: #f0f0f0;
+  --border-primary-color: #333;
 }
 
 html {
-    background-color: var(--bg-primary-color);
-    color: var(--text-primary-color);
-    font-family: system-ui, sans-serif;
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  font-family: system-ui, sans-serif;
 }
 
-main, section {
-    width: 100%;
-    height: 100%;
+main,
+section {
+  width: 100%;
+  height: 100%;
 }
 
 section {
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .infos {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .info {
-    padding: 8px 16px;
-    border: 1px solid var(--border-primary-color);
-    border-radius: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 8px;
 }
 
 .board {
-    flex-grow: 1;
-    border: 1px solid var(--border-primary-color);
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+  flex-grow: 1;
+  border: 1px solid var(--border-primary-color);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
 }
 
 .block {
-    border: 1px solid var(--border-primary-color);
+  border: 1px solid var(--border-primary-color);
 }
 
 .fill {
-    background-color: var(--bg-fill-color);
+  background-color: var(--bg-fill-color);
 }
 
 .food {
-    background-color: var(--bg-food-color);
-    border-radius: 50%;
+  background-color: var(--bg-food-color);
+  border-radius: 50%;
 }
 
 /* ---------- SNAKE HEAD ---------- */
 
 .head {
-    position: relative;
-    background: linear-gradient(145deg, #ffffff, #cfcfcf);
-    border-radius: 35%;
-    box-shadow: inset -3px -3px 6px rgba(0,0,0,0.3);
+  position: relative;
+  background: linear-gradient(145deg, #ffffff, #cfcfcf);
+  border-radius: 35%;
+  box-shadow: inset -3px -3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .head::before,
 .head::after {
-    content: "";
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: #000;
-    border-radius: 50%;
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #000;
+  border-radius: 50%;
 }
 
-.head.up::before { top: 6px; left: 10px; }
-.head.up::after  { top: 6px; right: 10px; }
+.head.up::before {
+  top: 6px;
+  left: 10px;
+}
+.head.up::after {
+  top: 6px;
+  right: 10px;
+}
 
-.head.down::before { bottom: 6px; left: 10px; }
-.head.down::after  { bottom: 6px; right: 10px; }
+.head.down::before {
+  bottom: 6px;
+  left: 10px;
+}
+.head.down::after {
+  bottom: 6px;
+  right: 10px;
+}
 
-.head.left::before { left: 6px; top: 10px; }
-.head.left::after  { left: 6px; bottom: 10px; }
+.head.left::before {
+  left: 6px;
+  top: 10px;
+}
+.head.left::after {
+  left: 6px;
+  bottom: 10px;
+}
 
-.head.right::before { right: 6px; top: 10px; }
-.head.right::after  { right: 6px; bottom: 10px; }
+.head.right::before {
+  right: 6px;
+  top: 10px;
+}
+.head.right::after {
+  right: 6px;
+  bottom: 10px;
+}
 
 /* ---------- MODAL ---------- */
 
 .modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .start-game,
 .game-over {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
 }
 
 .game-over {
-    display: none;
+  display: none;
 }
 
 .btn {
-    padding: 12px 28px;
-    background: #000;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
+  padding: 12px 28px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .btn:hover {
-    background: #fff;
-    color: #000;
+  background: #fff;
+  color: #000;
 }
